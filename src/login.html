@@ -5,21 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesMobile.css">
     <title>Inicia sesión en CRYOT</title>
 </head>
 
 <body>
-    <section id="nav" class="centered">
-        <h2>CRYOT</h2>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="">Información</a></li>
-            <li><a href="">Campañas</a></li>
-            <li><a href="login.html">Iniciar sesión</a></li>
-            <li><a href="signup.html">Registrarse</a></li>
+    <nav class="top-nav">
+        <div class ="logo">
+          CRYOT
+        </div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+        <div class='menu-button'></div>
+      </label>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#information">Información</a></li>
+          <li><a href="campaign.html">Campañas</a></li>
+          <li><a href="login.html">Iniciar Sesión</a></li>
+          <li><a href="signup.html">Registrarse</a></li>
         </ul>
-    </section>
+    </nav>
 
     <div class="login_cointainer centered">
         <h2>Inicia sesión</h2>
