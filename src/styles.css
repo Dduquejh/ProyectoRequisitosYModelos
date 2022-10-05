@@ -193,6 +193,10 @@ a{
   .footer-clean .item.social {
     text-align:right;
   }
+  .footer-clean .item {
+    text-align:center;
+    padding-bottom:20px;
+  }
   
   @media (max-width:767px) {
     .footer-clean .item {
