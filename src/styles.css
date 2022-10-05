@@ -256,3 +256,17 @@ a{
     font-size:13px;
     opacity:0.6;
   }
+
+.login-container{
+    max-width: 80%;
+    margin: 20px auto;
+}
+.login-container>p{
+    margin-bottom: 20px;
+}
+.login-container>input{
+    margin-bottom: 5px;
+}
+.login-container>button{
+    margin-top: 20px;
+}
