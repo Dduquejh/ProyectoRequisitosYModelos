@@ -149,6 +149,13 @@ a{
 
 }
 
+.info-container{
+    margin: auto;
+    max-width: 80%;
+}
+.info-container>p{
+    margin-bottom: 40px;
+}
 .info-container>*:not(:nth-child()){
     margin-bottom: 20px;
 
@@ -160,8 +167,9 @@ a{
 }
 
 .footer-clean {
+    margin-top: 20px;
     padding:50px 0;
-    background-color:#fff;
+    background-color:#fec1ef;
     color:#4b4c4d;
   }
   
@@ -169,7 +177,7 @@ a{
     margin-top:0;
     margin-bottom:12px;
     font-weight:bold;
-    font-size:16px;
+    font-size:24px;
   }
   
   .footer-clean ul {
