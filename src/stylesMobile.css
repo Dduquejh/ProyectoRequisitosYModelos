@@ -49,6 +49,10 @@
     .menu > li:not(:last-child) {
       border-bottom: 1px solid var(--color-accent);
     }
+
+    .hero{
+      padding: 0;
+    }
     .info-container{
       grid-template-columns: 1fr;
     }
@@ -64,7 +68,7 @@
     .login-wrapper{
       background-color: white;
     }
-    
+
     .login-card{
       padding: 40px;
       height: 100%;
