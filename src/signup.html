@@ -99,14 +99,15 @@
                 //clear form
                 signupForm.reset();
                 // Signed in
-                console.log('sign up')
-                window.alert('Usuario registrado')
+                window.alert('Usuario registrado');
                 const user = userCredential.user;
                 // ...
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+
+                window.alert(errorMessage);
                 // ..
             });
             
