@@ -38,9 +38,11 @@
                     <h2>Inicia sesión</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vitae, culpa eligendi cupiditate, velit minus distinctio deserunt est porro optio.
                 </div>
-                <input type="email" name="email" id="login_email" placeholder="Ingrese el correo"><br>
-                <input type="password" name="password" id="login_password" placeholder="Ingrese la contraseña"><br>
-                <button type="submit" class="hero-cta">Iniciar sesión</button>
+                <form id="login-form">
+                    <input type="email" name="email" id="login_email" placeholder="Ingrese el correo"><br>
+                    <input type="password" name="password" id="login_password" placeholder="Ingrese la contraseña"><br>
+                    <button type="submit" class="hero-cta">Iniciar sesión</button>
+                </form>
             </div>
         </section>
         <section class="footer-wrapper">
@@ -62,6 +64,54 @@
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAWrW3aaT9_szJX9euLTPM-0u0LNmo0ZAw",
+            authDomain: "cryot-65699.firebaseapp.com",
+            projectId: "cryot-65699",
+            storageBucket: "cryot-65699.appspot.com",
+            messagingSenderId: "61136241377",
+            appId: "1:61136241377:web:05c6d232c3a1b5357b6da0"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const loginForm = document.querySelector('#login-form');
+
+        loginForm.addEventListener('submit', (e)=>{
+            e.preventDefault();
+
+            const loginEmail = document.querySelector('#login_email').value;
+            const loginPassword = document.querySelector('#login_password').value;
+
+            signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+            .then((userCredential) => {
+                //clear form
+                loginForm.reset();
+                // Signed in
+                window.alert('Has ingresado a la cuenta');
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                window.alert(errorMessage);
+                // ..
+            });
+            
+        })
+    </script>
 </body>
 
 </html>
