@@ -18,18 +18,18 @@
     <section class="login-wrapper">
         <nav class="top-nav">
             <div class ="logo">
-              <img src="../assets/logo.png" alt="">
+            <img src="../assets/logo.png" alt="">
             </div>
             <input id="menu-toggle" type="checkbox" />
             <label class='menu-button-container' for="menu-toggle">
             <div class='menu-button'></div>
-          </label>
+            </label>
             <ul class="menu">
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="#information">Información</a></li>
-              <li><a href="campaign.html">Campañas</a></li>
-              <li><a href="login.html">Iniciar Sesión</a></li>
-              <li><a href="signup.html">Registrarse</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#information">Información</a></li>
+            <li><a href="campaign.html">Campañas</a></li>
+            <li><a href="login.html">Iniciar Sesión</a></li>
+            <li><a href="signup.html">Registrarse</a></li>
             </ul>
         </nav>
         <section class="login-container centered">
@@ -38,10 +38,12 @@
                     <h2>Registrarse</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vitae, culpa eligendi cupiditate, velit minus distinctio deserunt est porro optio.
                 </div>
-                <input type="text" name="name" id="register_name" placeholder="Ingrese su nombre"><br>
-                <input type="email" name="email" id="register_email" placeholder="Ingrese el correo"><br>
-                <input type="password" name="password" id="register_password" placeholder="Ingrese la contraseña"><br>
-                <button type="submit" class="hero-cta">Iniciar sesión</button>
+                <form id="signup-form">
+                    <input type="text" name="name" id="register_name" placeholder="Ingrese su nombre" required><br>
+                    <input type="email" name="email" id="register_email" placeholder="Ingrese el correo" required><br>
+                    <input type="password" name="password" id="register_password" placeholder="Ingrese la contraseña" required><br>
+                    <button type="submit" class="hero-cta">Registrarse</button>
+                </form>
             </div>
         </section>
         <section class="footer-wrapper">
@@ -63,6 +65,58 @@
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAWrW3aaT9_szJX9euLTPM-0u0LNmo0ZAw",
+            authDomain: "cryot-65699.firebaseapp.com",
+            projectId: "cryot-65699",
+            storageBucket: "cryot-65699.appspot.com",
+            messagingSenderId: "61136241377",
+            appId: "1:61136241377:web:05c6d232c3a1b5357b6da0"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const signupForm = document.querySelector('#signup-form');
+
+        signupForm.addEventListener('submit', (e)=>{
+            e.preventDefault();
+
+            const signupEmail = document.querySelector('#register_email').value;
+            const signupPassword = document.querySelector('#register_password').value;
+
+            createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
+            .then((userCredential) => {
+                //clear form
+                signupForm.reset();
+                // Signed in
+                console.log('sign up')
+                window.alert('Usuario registrado')
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+            });
+            
+        })
+        
+        
+        
+        
+    </script>
+
 </body>
 
 </html>
