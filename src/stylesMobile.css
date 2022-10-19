@@ -74,4 +74,26 @@
       height: 100%;
       width: 100%;
     }
+
+    .campaign-wrapper {
+      display: grid;
+      max-width: 80%;
+      margin: auto;
+      padding: 100px 0;
+      grid-template-columns: 1fr;
+      gap:100px;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .campaign-wrapper>img {
+      width: 100%;
+    }
+    
+    .campaign-wrapper>article {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      align-items: center;
+    }
+    
   }

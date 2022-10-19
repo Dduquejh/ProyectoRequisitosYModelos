@@ -234,3 +234,24 @@ footer>div>ul>li>a{
 .login-description{
   margin-bottom: 20px;
 }
+
+.campaign-wrapper {
+  display: grid;
+  max-width: 80%;
+  margin: auto;
+  padding: 100px 0;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.campaign-wrapper>img {
+  width: 100%;
+}
+
+.campaign-wrapper>article {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
