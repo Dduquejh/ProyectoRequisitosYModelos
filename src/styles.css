@@ -251,21 +251,21 @@ footer>div>ul>li>a{
 
 #login-form {
   display: grid;
-  gap: 10px;
+  gap: 5px;
   padding: 0 10%;
   grid-template-columns: 1fr;
 }
 
 #signup-form {
   display: grid;
-  gap: 10px;
+  gap: 5px;
   padding: 0 10%;
   grid-template-columns: 1fr;
 }
 
 #campaign-form{
   display: grid;
-  gap: 10px;
+  gap: 5px;
   padding: 0 10%;
   grid-template-columns: 1fr;
 }

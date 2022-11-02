@@ -39,10 +39,10 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vitae, culpa eligendi cupiditate, velit minus distinctio deserunt est porro optio.
                 </div>
                 <form id="campaign-form">
-                    <input type="text" name="name" id="campaign_name" placeholder="Nombre de la campaña">
-                    <input type="text" name="description" id="campaign_description" placeholder="Descripción" style="width:100%; min-height: 50px;">
-                    <input type="text" name="goal" id="campaign_goal" placeholder="Cantidad de dinero requerida">
-                    <input type="text" name="company" id="campaign_company" placeholder="Nombre de la compañía">
+                    <input type="text" name="name" id="campaign_name" placeholder="Nombre de la campaña" required>
+                    <input type="text" name="description" id="campaign_description" placeholder="Descripción" style="width:100%; min-height: 50px;" required>
+                    <input type="number" name="goal" id="campaign_goal" placeholder="Cantidad de dinero requerida" required>
+                    <input type="text" name="company" id="campaign_company" placeholder="Nombre de la compañía"required>
                     <input type="text" name="lorem" id="campaign_lorem" placeholder="Lorem">
 
                     <button type="button" class="hero-cta" id="create-newcampaign-button">Crear</button>
@@ -70,7 +70,7 @@
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+        import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
     
@@ -99,12 +99,19 @@
             }
 
             addCampaignToDb(campaign)
-            
+            alertCampaignCreation();
         })
 
         function addCampaignToDb(camp){
             set(ref(database, "campaigns/" + camp.id), camp);
-            alert("Su campaña ha sido creada con éxito.")
+        }
+
+        function alertCampaignCreation(){
+            let creationCompleteHTML = '<img src="../assets/checkmark.png" alt="" class="img-card" style="margin: 0 auto;">';
+            creationCompleteHTML += '<p> Su campaña ha sido creada exitosamente. </p>'
+            creationCompleteHTML += '<a href="campaign.html"> Ir a las campañas </a>'
+
+            $("#campaign-form").html(creationCompleteHTML);
         }
 
     </script>
