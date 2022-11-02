@@ -1,9 +1,9 @@
 :root {
   --font-raleway:'Raleway', sans-serif;
   --font-inter:'Inter', sans-serif;
-  --color-primary: #fec1ef;
-  --color-secondary: #F781F3;
-  --color-accent: #ee71e8;
+  --color-primary: #7289DA;
+  --color-secondary: #4682B4;
+  --color-accent: #8a8ad5;
   --black: #201e1c;
   --grey: #bababa;
   --white: #fff;
@@ -44,7 +44,7 @@
       padding: 0.5em 0;
       width: 100%;
       color: var(--white);
-      background-color: #F781F3;
+      background-color: var(--color-secondary);
     }
     .menu > li:not(:last-child) {
       border-bottom: 1px solid var(--color-accent);

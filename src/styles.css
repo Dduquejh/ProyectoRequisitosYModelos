@@ -1,9 +1,9 @@
 :root {
   --font-raleway:'Raleway', sans-serif;
   --font-inter:'Inter', sans-serif;
-  --color-primary: #fec1ef;
-  --color-secondary: #F781F3;
-  --color-accent: #ee71e8;
+  --color-primary: #7289DA;
+  --color-secondary: #4682B4;
+  --color-accent: #8a8ad5;
   --black: #201e1c;
   --grey: #bababa;
   --white: #fff;
@@ -24,6 +24,10 @@ h2 {
   vertical-align: center;
   text-align: center;
 }
+
+input{
+  padding: 5px;
+}
 .logo{
   height: 200%;
 }
@@ -43,7 +47,13 @@ h2 {
   color: #FFF;
   height: 50px;
   padding: 1em;
+}
 
+.top-nav>ul>li:nth-child(4){
+  text-decoration: underline;
+}
+.top-nav>ul>li:nth-child(5){
+  text-decoration: underline;
 }
 
 .menu {
@@ -165,6 +175,7 @@ ul{
     font-size: larger;
 }
 .hero-cta{
+    cursor: pointer;
     border: 1px solid var(--color-accent);
     background-color: var(--color-secondary);
     padding: 5px;
@@ -195,6 +206,9 @@ footer{
   background-color: var(--color-primary);
 }
 
+footer>.logo>a>img{
+  width: 100px;
+}
 footer>div>ul>li{
   display: inline-block;
 }
@@ -233,6 +247,27 @@ footer>div>ul>li>a{
 
 .login-description{
   margin-bottom: 20px;
+}
+
+#login-form {
+  display: grid;
+  gap: 10px;
+  padding: 0 10%;
+  grid-template-columns: 1fr;
+}
+
+#signup-form {
+  display: grid;
+  gap: 10px;
+  padding: 0 10%;
+  grid-template-columns: 1fr;
+}
+
+#campaign-form{
+  display: grid;
+  gap: 10px;
+  padding: 0 10%;
+  grid-template-columns: 1fr;
 }
 
 .campaign-wrapper {
